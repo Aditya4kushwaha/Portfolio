@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import pf_pic from "../assets/profile.jpg"
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -105,7 +106,7 @@ function Home({ scrollToSkills }) {
           animate="visible"
         >
           <img
-            src="./src/assets/profile.jpg"
+            src={pf_pic}
             alt="Profile"
             className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full object-cover border-4 border-blue-500 shadow-lg"
           />

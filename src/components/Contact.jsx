@@ -1,3 +1,4 @@
+import pic from "../assets/pf_pic.png"
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import {
@@ -55,7 +56,7 @@ const Contact = () => {
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <img
-          src="./src/assets/pf_pic.png"
+          src={pic}
           alt="Aditya Kushwaha"
           className="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-full object-cover mb-4 border-4 border-gray-600"
         />
