@@ -31,4 +31,4 @@ Welcome to the repository for my personal portfolio website! This project showca
 
 ---
 
-Made with ❤️ by [Your Name](https://github.com/your-username)
+Made with ❤️ by [Aditya Kushwaha](https://github.com/Aditya4kushwaha)
