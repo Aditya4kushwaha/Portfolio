@@ -2,7 +2,7 @@
 
 Welcome to the repository for my personal portfolio website! This project showcases my skills, projects, and journey as a web developer. It's built with modern technologies to be fast, responsive, and visually engaging.
 
-**[Live Demo]([https://your-live-link-here.com](https://portfolio-rose-three-24.vercel.app/))**
+**[Live Demo](https://portfolio-rose-three-24.vercel.app/)**
 
 
 
