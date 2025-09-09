@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FaReact,
@@ -19,7 +19,7 @@ import memeGenerator from "../assets/Meme.png";
 import UrlShort from "../assets/url-shortener.png";
 import CryptoHunterMini from "../assets/CryptoHunterMini.png";
 import Cluely from "../assets/Cluely.png";
-import ChitChat from "../assets/Chit-chat.png";
+import Chillz from "../assets/Chillz.png"
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -36,9 +36,10 @@ const cardVariants = {
 };
 
 const Projects = () => {
-  const [activeTab, setActiveTab] = useState("fullstack");
+  const [activeTab, setActiveTab] = useState("frontend");
 
-  const fullstackProjects = [
+  
+  const frontendProjects = [
     {
       title: "Meme Generator",
       link: "https://meme-generator-kappa-brown.vercel.app/",
@@ -46,16 +47,6 @@ const Projects = () => {
       image: memeGenerator,
       tech: ["React", "Tailwind CSS"],
     },
-    {
-      title: "Chit Chat",
-      link: "https://chit-chat-c2nw.onrender.com",
-      github: "https://github.com/Aditya4kushwaha/Chit-Chat",
-      image: ChitChat,
-      tech: ["React", "Express", "Node.js", "MongoDB", "Socket IO"],
-    },
-  ];
-
-  const miniProjects = [
     {
       title: "URL Shortener",
       link: "https://url-shortener-theta-two.vercel.app/",
@@ -80,6 +71,13 @@ const Projects = () => {
       image: Cluely,
       tech: ["React", "Tailwind CSS"],
     },
+    {
+      title: "Chillz",
+      link: "https://chillz-seven.vercel.app/",
+      github: "https://github.com/Aditya4kushwaha/Chillz",
+      image: Chillz,
+      tech: ["React", "Tailwind CSS"],
+    },
   ];
 
   const techIcons = {
@@ -94,11 +92,7 @@ const Projects = () => {
   };
 
   const displayedProjects =
-    activeTab === "fullstack"
-      ? fullstackProjects
-      : activeTab === "mini"
-      ? miniProjects
-      : landingPageProjects;
+    activeTab === "frontend" ? frontendProjects : landingPageProjects;
 
   return (
     <motion.section
@@ -114,8 +108,8 @@ const Projects = () => {
           My <span className="text-blue-500">Projects</span>
         </h1>
         <p className="text-gray-400 text-sm sm:text-base">
-          A showcase of my web development journey, featuring full-stack apps,
-          mini projects, and landing pages.
+          A showcase of my web development journey, featuring Frontend Apps and
+          Landing Pages.
         </p>
       </div>
 
@@ -123,23 +117,13 @@ const Projects = () => {
       <div className="flex flex-wrap justify-center gap-3 mt-10 mb-8">
         <button
           className={`cursor-pointer px-5 py-2 rounded-lg font-medium transition ${
-            activeTab === "fullstack"
+            activeTab === "frontend"
               ? "bg-blue-600 text-white"
               : "bg-gray-800 hover:bg-gray-700"
           }`}
-          onClick={() => setActiveTab("fullstack")}
+          onClick={() => setActiveTab("frontend")}
         >
-          Full Stack Projects
-        </button>
-        <button
-          className={`cursor-pointer px-5 py-2 rounded-lg font-medium transition ${
-            activeTab === "mini"
-              ? "bg-blue-600 text-white"
-              : "bg-gray-800 hover:bg-gray-700"
-          }`}
-          onClick={() => setActiveTab("mini")}
-        >
-          Mini Projects
+          Frontend Projects
         </button>
         <button
           className={`cursor-pointer px-5 py-2 rounded-lg font-medium transition ${

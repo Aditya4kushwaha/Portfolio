@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion"; 
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
 import { SiTailwindcss, SiExpress, SiMongodb, SiTypescript } from "react-icons/si";

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import pf_pic from "../assets/profile.jpg"
+import pf_pic from "../assets/profile.jpg";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -61,16 +61,15 @@ function Home({ scrollToSkills }) {
             className="text-base sm:text-lg md:text-xl text-gray-200 mb-6 sm:mb-8 max-w-lg"
           >
             3rd Year Computer Science undergraduate with a specialization in
-            Frontend Development. Proficient in the MERN stack, I am dedicated
-            to building efficient, scalable, and visually appealing web
-            applications. 
+            Frontend Development. Proficient in the MERN stack. I am dedicated
+            to building efficient and scalable web applications.
           </motion.p>
 
           <motion.h2
             variants={itemVariants}
             className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6"
           >
-            Full Stack <span className="text-blue-500">Web Developer</span>
+            Frontend <span className="text-blue-500"> Developer</span>
           </motion.h2>
 
           <motion.div
@@ -78,7 +77,7 @@ function Home({ scrollToSkills }) {
             className="mt-4 flex flex-wrap gap-4 justify-center sm:justify-start"
           >
             <motion.a
-              href="https://drive.google.com/file/d/1nl2Tor8MZum_bjWOBf_f3uV_mlXYEtcp/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1EemuXWNV9AAwMH-SY8FpT4ipaDLmlyO0/view?usp=drive_link"
               download
               target="_blank"
               className="bg-blue-600 text-white px-5 py-3 rounded-xl font-semibold transition hover:bg-blue-700 text-sm sm:text-base"
