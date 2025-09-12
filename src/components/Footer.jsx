@@ -1,35 +1,14 @@
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaTwitter, FaEnvelope } from "react-icons/fa";
-
 const footerVariants = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.2 },
-  },
+  visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
 };
-
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
+  visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } },
 };
-
 const Footer = () => {
-  const [visits, setVisits] = useState(null);
-
-  useEffect(() => {
-    // Replace "adityaxdev-portfolio" with any unique namespace/key
-    fetch("https://api.countapi.xyz/hit/adityaxdev-portfolio/visits")
-      .then((res) => res.json())
-      .then((data) => setVisits(data.value))
-      .catch((err) => console.error("Error fetching visitor count:", err));
-  }, []);
-
   return (
     <motion.footer
       className="py-8 w-full"
@@ -38,15 +17,21 @@ const Footer = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.5 }}
     >
+      {" "}
       <div className="flex flex-col items-center gap-4">
-        <motion.h3 variants={itemVariants} className="text-xl font-medium text-white text-center">
-          Connect With Me
-        </motion.h3>
-
+        {" "}
+        <motion.h3
+          variants={itemVariants}
+          className="text-xl font-medium text-white text-center"
+        >
+          {" "}
+          Connect With Me{" "}
+        </motion.h3>{" "}
         <motion.div
           variants={itemVariants}
           className="flex flex-wrap justify-center gap-4"
         >
+          {" "}
           <motion.a
             href="https://x.com/adityakush_04"
             target="_blank"
@@ -56,9 +41,9 @@ const Footer = () => {
             whileHover={{ scale: 1.1, y: -3 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <FaTwitter size={20} className="text-white" />
-          </motion.a>
-
+            {" "}
+            <FaTwitter size={20} className="text-white" />{" "}
+          </motion.a>{" "}
           <motion.a
             href="mailto:adityakushwahaindia@gmail.com"
             aria-label="Email"
@@ -66,27 +51,20 @@ const Footer = () => {
             whileHover={{ scale: 1.1, y: -3 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <FaEnvelope size={20} className="text-white" />
-          </motion.a>
-        </motion.div>
-
-        {/* ✅ Visitor Count */}
+            {" "}
+            <FaEnvelope size={20} className="text-white" />{" "}
+          </motion.a>{" "}
+        </motion.div>{" "}
         <motion.p
           variants={itemVariants}
           className="text-gray-400 mt-2 text-sm text-center"
         >
-          {visits !== null ? `👀 ${visits} Visitors` : "Loading visitors..."}
-        </motion.p>
-
-        <motion.p
-          variants={itemVariants}
-          className="text-gray-400 text-sm text-center"
-        >
-          © 2025 . Made with <span className="text-red-500">❤️</span> by AdityaXdev
-        </motion.p>
-      </div>
+          {" "}
+          © 2025 . Made with <span className="text-red-500">❤️</span> by
+          AdityaXdev{" "}
+        </motion.p>{" "}
+      </div>{" "}
     </motion.footer>
   );
 };
-
 export default Footer;
