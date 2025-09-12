@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaTwitter, FaEnvelope } from "react-icons/fa";
 
@@ -5,9 +6,7 @@ const footerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
+    transition: { staggerChildren: 0.2 },
   },
 };
 
@@ -21,6 +20,16 @@ const itemVariants = {
 };
 
 const Footer = () => {
+  const [visits, setVisits] = useState(null);
+
+  useEffect(() => {
+    // Replace "adityaxdev-portfolio" with any unique namespace/key
+    fetch("https://api.countapi.xyz/hit/adityaxdev-portfolio/visits")
+      .then((res) => res.json())
+      .then((data) => setVisits(data.value))
+      .catch((err) => console.error("Error fetching visitor count:", err));
+  }, []);
+
   return (
     <motion.footer
       className="py-8 w-full"
@@ -61,9 +70,17 @@ const Footer = () => {
           </motion.a>
         </motion.div>
 
+        {/* ✅ Visitor Count */}
         <motion.p
           variants={itemVariants}
           className="text-gray-400 mt-2 text-sm text-center"
+        >
+          {visits !== null ? `👀 ${visits} Visitors` : "Loading visitors..."}
+        </motion.p>
+
+        <motion.p
+          variants={itemVariants}
+          className="text-gray-400 text-sm text-center"
         >
           © 2025 . Made with <span className="text-red-500">❤️</span> by AdityaXdev
         </motion.p>
