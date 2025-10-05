@@ -19,7 +19,9 @@ import memeGenerator from "../assets/Meme.png";
 import UrlShort from "../assets/url-shortener.png";
 import CryptoHunterMini from "../assets/CryptoHunterMini.png";
 import Cluely from "../assets/Cluely.png";
-import Chillz from "../assets/Chillz.png"
+import Chillz from "../assets/Chillz.png";
+import Fitness from "../assets/FitnessTracker.png";
+import ChatBot from "../assets/Chatbot.png"
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -38,7 +40,6 @@ const cardVariants = {
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("frontend");
 
-  
   const frontendProjects = [
     {
       title: "Meme Generator",
@@ -60,6 +61,23 @@ const Projects = () => {
       github: "https://github.com/Aditya4kushwaha/Crypto-Hunter",
       image: CryptoHunterMini,
       tech: ["React", "CSS"],
+    },
+  ];
+
+  const miniProjects = [
+    {
+      title: "Fitness Tracker",
+      link: "https://fitness-tracker-silk-six.vercel.app/",
+      github: "https://github.com/Aditya4kushwaha/Fitness-Tracker",
+      image: Fitness,
+      tech: ["React", "Tailwind CSS"],
+    },
+    {
+      title: "DSA ChatBot",
+      link: "https://dsa-instructor-bice.vercel.app/",
+      github: "https://github.com/Aditya4kushwaha/DSA-Intructor",
+      image: ChatBot,
+      tech: ["HTML", "CSS", "JavaScript"],
     },
   ];
 
@@ -92,7 +110,11 @@ const Projects = () => {
   };
 
   const displayedProjects =
-    activeTab === "frontend" ? frontendProjects : landingPageProjects;
+    activeTab === "frontend"
+      ? frontendProjects
+      : activeTab === "mini"
+      ? miniProjects
+      : landingPageProjects;
 
   return (
     <motion.section
@@ -108,8 +130,8 @@ const Projects = () => {
           My <span className="text-blue-500">Projects</span>
         </h1>
         <p className="text-gray-400 text-sm sm:text-base">
-          A showcase of my web development journey, featuring Frontend Apps and
-          Landing Pages.
+          A showcase of my web development journey featuring Frontend, Mini
+          Projects and Landing Pages.
         </p>
       </div>
 
@@ -125,6 +147,18 @@ const Projects = () => {
         >
           Frontend Projects
         </button>
+
+        <button
+          className={`cursor-pointer px-5 py-2 rounded-lg font-medium transition ${
+            activeTab === "mini"
+              ? "bg-blue-600 text-white"
+              : "bg-gray-800 hover:bg-gray-700"
+          }`}
+          onClick={() => setActiveTab("mini")}
+        >
+          Mini Projects
+        </button>
+
         <button
           className={`cursor-pointer px-5 py-2 rounded-lg font-medium transition ${
             activeTab === "landing"

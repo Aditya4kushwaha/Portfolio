@@ -60,9 +60,9 @@ function Home({ scrollToSkills }) {
             variants={itemVariants}
             className="text-base sm:text-lg md:text-xl text-gray-200 mb-6 sm:mb-8 max-w-lg"
           >
-            3rd Year Computer Science undergraduate with a specialization in
-            Frontend Development. Proficient in the MERN stack. I am dedicated
-            to building efficient and scalable web applications.
+            I’m a Computer Science undergraduate specializing in Frontend
+            Development with expertise in the MERN stack. Passionate about
+            building efficient, scalable, and user friendly web applications.
           </motion.p>
 
           <motion.h2
