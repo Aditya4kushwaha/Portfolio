@@ -77,7 +77,7 @@ function Home({ scrollToSkills }) {
             className="mt-4 flex flex-wrap gap-4 justify-center sm:justify-start"
           >
             <motion.a
-              href="https://drive.google.com/file/d/1EemuXWNV9AAwMH-SY8FpT4ipaDLmlyO0/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1zxDpQTr_NzB34XvyC5je2Hpe_wRk8tg0/view?usp=sharing"
               download
               target="_blank"
               className="bg-blue-600 text-white px-5 py-3 rounded-xl font-semibold transition hover:bg-blue-700 text-sm sm:text-base"
