@@ -1,4 +1,4 @@
-# My Personal Portfolio 🚀
+# My Portfolio 🚀
 
 Welcome to the repository for my personal portfolio website! This project showcases my skills, projects, and journey as a web developer. It's built with modern technologies to be fast, responsive, and visually engaging.
 
@@ -23,11 +23,6 @@ Welcome to the repository for my personal portfolio website! This project showca
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 - **Animations:** [Framer Motion](https://www.framer.com/motion/)
 - **Icons:** [React Icons](https://react-icons.github.io/react-icons/)
-
-
-
-
-
 
 ---
 
