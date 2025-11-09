@@ -21,7 +21,7 @@ import CryptoHunterMini from "../assets/CryptoHunterMini.png";
 import Cluely from "../assets/Cluely.png";
 import Chillz from "../assets/Chillz.png";
 import Fitness from "../assets/FitnessTracker.png";
-import ChatBot from "../assets/Chatbot.png"
+import ChatBot from "../assets/Chatbot.png";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -118,62 +118,47 @@ const Projects = () => {
 
   return (
     <motion.section
-      className="bg-black text-white py-16 px-4 min-h-screen"
+      className="bg-black text-white py-16 px-4 sm:px-6 md:px-10 min-h-screen"
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.8 }}
     >
       {/* Heading */}
-      <div className="text-center max-w-xl mx-auto">
+      <div className="text-center max-w-xl mx-auto mb-10">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
           My <span className="text-blue-500">Projects</span>
         </h1>
-        <p className="text-gray-400 text-sm sm:text-base">
+        <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
           A showcase of my web development journey featuring Frontend, Mini
-          Projects and Landing Pages.
+          Projects, and Landing Pages.
         </p>
       </div>
 
       {/* Tabs */}
-      <div className="flex flex-wrap justify-center gap-3 mt-10 mb-8">
-        <button
-          className={`cursor-pointer px-5 py-2 rounded-lg font-medium transition ${
-            activeTab === "frontend"
-              ? "bg-blue-600 text-white"
-              : "bg-gray-800 hover:bg-gray-700"
-          }`}
-          onClick={() => setActiveTab("frontend")}
-        >
-          Frontend Projects
-        </button>
-
-        <button
-          className={`cursor-pointer px-5 py-2 rounded-lg font-medium transition ${
-            activeTab === "mini"
-              ? "bg-blue-600 text-white"
-              : "bg-gray-800 hover:bg-gray-700"
-          }`}
-          onClick={() => setActiveTab("mini")}
-        >
-          Mini Projects
-        </button>
-
-        <button
-          className={`cursor-pointer px-5 py-2 rounded-lg font-medium transition ${
-            activeTab === "landing"
-              ? "bg-blue-600 text-white"
-              : "bg-gray-800 hover:bg-gray-700"
-          }`}
-          onClick={() => setActiveTab("landing")}
-        >
-          Landing Pages
-        </button>
+      <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-10">
+        {[
+          { key: "frontend", label: "Frontend Projects" },
+          { key: "mini", label: "Mini Projects" },
+          { key: "landing", label: "Landing Pages" },
+        ].map(({ key, label }) => (
+          <button
+            key={key}
+            className={`cursor-pointer px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg font-medium text-sm sm:text-base transition-all ${
+              activeTab === key
+                ? "bg-blue-600 text-white"
+                : "bg-gray-800 hover:bg-gray-700"
+            }`}
+            onClick={() => setActiveTab(key)}
+          >
+            {label}
+          </button>
+        ))}
       </div>
 
       {/* Project Cards */}
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center px-2 sm:px-4"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center"
         key={activeTab}
         variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
         initial="hidden"
@@ -185,7 +170,7 @@ const Projects = () => {
               key={project.title}
               variants={cardVariants}
               exit="exit"
-              className="bg-gray-900 rounded-xl overflow-hidden shadow-lg w-80 flex-shrink-0"
+              className="bg-gray-900 rounded-xl overflow-hidden shadow-lg w-full sm:w-[22rem] md:w-[23rem] flex-shrink-0 transition-all"
               whileHover={{
                 y: -8,
                 boxShadow: "0px 15px 25px rgba(0, 0, 0, 0.5)",
@@ -197,17 +182,17 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
 
               {/* Content */}
-              <div className="p-4">
+              <div className="p-4 sm:p-5">
                 <div className="flex justify-between items-center mb-2">
-                  <h2 className="text-lg sm:text-xl font-semibold">
+                  <h2 className="text-lg sm:text-xl font-semibold truncate">
                     {project.title}
                   </h2>
-                  <div className="flex gap-3 text-lg">
+                  <div className="flex gap-3 text-base sm:text-lg">
                     <a
                       href={project.link}
                       target="_blank"
@@ -232,11 +217,11 @@ const Projects = () => {
                 </div>
 
                 {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mt-4 text-2xl">
+                <div className="flex flex-wrap gap-2 mt-4 text-xl sm:text-2xl">
                   {project.tech.map((tech) => (
                     <div
                       key={tech}
-                      className="flex items-center gap-1 text-sm"
+                      className="flex items-center gap-1 text-sm sm:text-base"
                       title={tech}
                     >
                       {techIcons[tech]}

@@ -1,4 +1,4 @@
-import pic from "../assets/pf_pic.png"
+import pic from "../assets/pf_pic.png";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import {
@@ -31,14 +31,14 @@ const linkVariants = {
 const Contact = () => {
   return (
     <motion.div
-      className="min-h-screen text-white flex flex-col items-center justify-center px-4 py-10"
+      className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-4 py-16 sm:py-20"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8 }}
     >
       {/* Heading */}
-      <h1 className="flex flex-wrap justify-center mb-6 text-center">
+      <h1 className="flex flex-wrap justify-center mb-8 text-center">
         <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
           Contact&nbsp;
         </span>
@@ -47,9 +47,9 @@ const Contact = () => {
         </span>
       </h1>
 
-      {/* Profile Card */}
+      {/* Profile Card (background removed) */}
       <motion.div
-        className="p-6 sm:p-8 md:p-10 rounded-xl shadow-lg w-full max-w-md sm:max-w-lg lg:max-w-2xl text-center"
+        className="p-6 sm:p-8 md:p-10 rounded-xl shadow-none w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl text-center"
         initial={{ scale: 0.8, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ once: true, amount: 0.5 }}
@@ -63,25 +63,25 @@ const Contact = () => {
         <h2 className="text-xl sm:text-2xl font-semibold mb-2">
           Aditya Kushwaha
         </h2>
-        <p className="text-gray-400 text-sm sm:text-base mb-6">
+        <p className="text-gray-400 text-sm sm:text-base mb-8">
           Frontend Developer | Competitive Programmer
         </p>
 
         {/* Social Links */}
         <motion.div
-          className="flex flex-col items-center gap-4"
+          className="flex flex-col items-center gap-4 w-full"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           {/* Row 1 */}
-          <div className="flex flex-wrap justify-center gap-3 w-full">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 w-full">
             <motion.a
               href="https://github.com/Aditya4kushwaha"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 min-w-[140px] sm:min-w-[160px] px-4 py-2 rounded-md flex items-center justify-center gap-2 border border-gray-600 hover:bg-gray-800 transition"
+              className="flex-1 min-w-[130px] sm:min-w-[160px] px-4 py-2 sm:py-3 rounded-md flex items-center justify-center gap-2 border border-gray-600 hover:bg-gray-800 transition text-sm sm:text-base"
               variants={linkVariants}
               whileHover={{ y: -3, scale: 1.05 }}
             >
@@ -91,7 +91,7 @@ const Contact = () => {
               href="https://www.linkedin.com/in/aditya-kushwaha-3a9936285/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 min-w-[140px] sm:min-w-[160px] px-4 py-2 rounded-md flex items-center justify-center gap-2 border border-gray-600 hover:bg-gray-800 transition"
+              className="flex-1 min-w-[130px] sm:min-w-[160px] px-4 py-2 sm:py-3 rounded-md flex items-center justify-center gap-2 border border-gray-600 hover:bg-gray-800 transition text-sm sm:text-base"
               variants={linkVariants}
               whileHover={{ y: -3, scale: 1.05 }}
             >
@@ -101,7 +101,7 @@ const Contact = () => {
               href="https://codeforces.com/profile/aadi_kush"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 min-w-[140px] sm:min-w-[160px] px-4 py-2 rounded-md flex items-center justify-center gap-2 border border-gray-600 hover:bg-gray-800 transition"
+              className="flex-1 min-w-[130px] sm:min-w-[160px] px-4 py-2 sm:py-3 rounded-md flex items-center justify-center gap-2 border border-gray-600 hover:bg-gray-800 transition text-sm sm:text-base"
               variants={linkVariants}
               whileHover={{ y: -3, scale: 1.05 }}
             >
@@ -110,12 +110,12 @@ const Contact = () => {
           </div>
 
           {/* Row 2 */}
-          <div className="flex flex-wrap justify-center gap-3 w-full">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 w-full">
             <motion.a
               href="https://www.codechef.com/users/aadi_kush"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 min-w-[140px] sm:min-w-[160px] px-4 py-2 rounded-md flex items-center justify-center gap-2 border border-gray-600 hover:bg-gray-800 transition"
+              className="flex-1 min-w-[130px] sm:min-w-[160px] px-4 py-2 sm:py-3 rounded-md flex items-center justify-center gap-2 border border-gray-600 hover:bg-gray-800 transition text-sm sm:text-base"
               variants={linkVariants}
               whileHover={{ y: -3, scale: 1.05 }}
             >
@@ -125,7 +125,7 @@ const Contact = () => {
               href="https://leetcode.com/u/aadi_kush/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 min-w-[140px] sm:min-w-[160px] px-4 py-2 rounded-md flex items-center justify-center gap-2 border border-gray-600 hover:bg-gray-800 transition"
+              className="flex-1 min-w-[130px] sm:min-w-[160px] px-4 py-2 sm:py-3 rounded-md flex items-center justify-center gap-2 border border-gray-600 hover:bg-gray-800 transition text-sm sm:text-base"
               variants={linkVariants}
               whileHover={{ y: -3, scale: 1.05 }}
             >
@@ -135,7 +135,7 @@ const Contact = () => {
               href="https://www.geeksforgeeks.org/user/aadi_kush/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 min-w-[140px] sm:min-w-[160px] px-4 py-2 rounded-md flex items-center justify-center gap-2 border border-gray-600 hover:bg-gray-800 transition"
+              className="flex-1 min-w-[130px] sm:min-w-[160px] px-4 py-2 sm:py-3 rounded-md flex items-center justify-center gap-2 border border-gray-600 hover:bg-gray-800 transition text-sm sm:text-base"
               variants={linkVariants}
               whileHover={{ y: -3, scale: 1.05 }}
             >
@@ -145,7 +145,9 @@ const Contact = () => {
         </motion.div>
       </motion.div>
 
-      <Footer />
+      <div className="w-full mt-10">
+        <Footer />
+      </div>
     </motion.div>
   );
 };
