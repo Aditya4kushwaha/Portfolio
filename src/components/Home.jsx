@@ -1,57 +1,20 @@
-import { motion } from "framer-motion";
 import pf_pic from "../assets/profile.jpg";
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.4 },
-  },
-};
-
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 1, ease: "easeOut" },
-  },
-};
-
-const imageVariants = {
-  hidden: { scale: 0.5, opacity: 0 },
-  visible: {
-    scale: 1,
-    opacity: 1,
-    transition: { duration: 0.8, type: "spring", stiffness: 120 },
-  },
-};
-
-function Home({ scrollToSkills }) {
+function Home({ scrollToContact }) {
   return (
     <div className="min-h-screen bg-black text-white flex items-center justify-center px-6 sm:px-8 py-12 sm:py-16 relative overflow-hidden">
+      {/* Subtle Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-transparent opacity-50 pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Text Section */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="flex flex-col justify-center text-center md:text-left"
-        >
-          <motion.h1
-            variants={itemVariants}
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4 sm:mb-6"
-          >
+        <div className="flex flex-col justify-center text-center md:text-left">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4 sm:mb-6">
             Hi I'm <span className="text-blue-500">Aditya</span>
-          </motion.h1>
+          </h1>
 
           {/* Tech Stack Line */}
-          <motion.p
-            variants={itemVariants}
-            className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 max-w-lg leading-relaxed flex flex-wrap justify-center md:justify-start items-center gap-2"
-          >
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 max-w-lg leading-relaxed flex flex-wrap justify-center md:justify-start items-center gap-2">
             I build interactive web apps using{" "}
             <a
               href="https://www.typescriptlang.org/"
@@ -122,7 +85,7 @@ function Home({ scrollToSkills }) {
               />
               Express.js
             </a>
-             and
+            , and{" "}
             <a
               href="https://www.mongodb.com/"
               target="_blank"
@@ -138,54 +101,40 @@ function Home({ scrollToSkills }) {
             </a>
             . With a focus on{" "}
             <span className="font-semibold text-white">UI</span> design.
-          </motion.p>
+          </p>
 
-          <motion.h2
-            variants={itemVariants}
-            className="text-lg sm:text-2xl md:text-3xl font-bold mb-6"
-          >
+          <h2 className="text-lg sm:text-2xl md:text-3xl font-bold mb-6">
             Frontend <span className="text-blue-500">Developer</span>
-          </motion.h2>
+          </h2>
 
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-wrap justify-center md:justify-start gap-4"
-          >
-            <motion.a
+          {/* Buttons */}
+          <div className="flex flex-wrap justify-center md:justify-start gap-4">
+            <a
               href="https://drive.google.com/file/d/13Glow-PxdALt-oTxAzRJSodJBzUFrCmn/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-blue-600 text-white px-5 py-3 rounded-xl font-semibold transition hover:bg-blue-700 text-sm sm:text-base"
-              whileHover={{ scale: 1.05, y: -2 }}
-              transition={{ type: "spring", stiffness: 300 }}
             >
               Resume / CV
-            </motion.a>
+            </a>
 
-            <motion.button
-              onClick={scrollToSkills}
+            <button
+              onClick={scrollToContact}
               className="cursor-pointer bg-white text-black px-5 py-3 rounded-xl font-semibold transition hover:bg-gray-200 text-sm sm:text-base"
-              whileHover={{ scale: 1.05, y: -2 }}
-              transition={{ type: "spring", stiffness: 300 }}
             >
               Get in touch
-            </motion.button>
-          </motion.div>
-        </motion.div>
+            </button>
+          </div>
+        </div>
 
         {/* Image Section */}
-        <motion.div
-          className="flex justify-center mt-10 md:mt-0"
-          variants={imageVariants}
-          initial="hidden"
-          animate="visible"
-        >
+        <div className="flex justify-center mt-10 md:mt-0">
           <img
             src={pf_pic}
             alt="Profile"
             className="w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 rounded-full object-cover border-4 border-blue-500 shadow-lg"
           />
-        </motion.div>
+        </div>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
+import Footer2 from "./components/Footer2"; // ✅ Imported here
 
 function App() {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -106,9 +107,10 @@ function App() {
 
       {/* Main Sections */}
       <main className="pt-16">
-        <section ref={homeRef}>
-          <Home scrollToSkills={() => scrollToSection(skillsRef)} />
-        </section>
+  <section ref={homeRef}>
+  <Home scrollToContact={() => scrollToSection(contactRef)} />
+</section>
+
         <section ref={projectsRef}>
           <Projects />
         </section>
@@ -118,6 +120,9 @@ function App() {
         <section ref={contactRef}>
           <Contact />
         </section>
+
+        {/* ✅ Footer2 Added Below Contact */}
+        <Footer2 />
       </main>
     </div>
   );
