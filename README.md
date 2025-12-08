@@ -8,8 +8,7 @@ Welcome to the repository for my personal portfolio website! This project showca
 
 ## ✨ Features
 
-- **Sleek UI:** A clean and modern design styled with **Tailwind CSS**.
-- **Interactive Animations:** Smooth and engaging animations powered by **Framer Motion**.
+- **UI:** A clean and modern design styled with **Tailwind CSS**.
 - **Fully Responsive:** Optimized for a seamless experience on all devices, from mobile phones to desktops.
 - **Component-Based:** Built with **React** for a modular and maintainable codebase.
 - **Dynamic Sections:** Includes sections for Home, Projects, Skills, and Contact information.
@@ -21,7 +20,6 @@ Welcome to the repository for my personal portfolio website! This project showca
 
 - **Framework:** [React](https://reactjs.org/)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Animations:** [Framer Motion](https://www.framer.com/motion/)
 - **Icons:** [React Icons](https://react-icons.github.io/react-icons/)
 
 ---
