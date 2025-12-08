@@ -32,7 +32,7 @@ const Contact = () => {
           Aditya Kushwaha
         </h2>
         <p className="text-gray-400 text-sm sm:text-base mb-8">
-          Frontend Developer | Competitive Programmer
+          Full Stack Developer | Competitive Programmer
         </p>
 
         {/* Social Links */}

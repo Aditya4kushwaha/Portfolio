@@ -16,20 +16,7 @@ function Home({ scrollToContact }) {
           {/* Tech Stack Line */}
           <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 max-w-lg leading-relaxed flex flex-wrap justify-center md:justify-start items-center gap-2">
             I build interactive web apps using{" "}
-            <a
-              href="https://www.typescriptlang.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gray-800 text-white px-2.5 py-1 rounded-md text-xs sm:text-sm font-medium flex items-center gap-1 hover:bg-gray-700 transition-all"
-            >
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-                alt="TypeScript"
-                className="w-4 h-4"
-              />
-              TypeScript
-            </a>
-            ,
+
             <a
               href="https://react.dev/"
               target="_blank"
@@ -44,67 +31,54 @@ function Home({ scrollToContact }) {
               React.js
             </a>
             ,
+
             <a
-              href="https://nextjs.org/"
+              href="https://www.java.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-800 text-white px-2.5 py-1 rounded-md text-xs sm:text-sm font-medium flex items-center gap-1 hover:bg-gray-700 transition-all"
             >
               <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
-                alt="Next.js"
-                className="w-4 h-4 invert"
-              />
-              Next.js
-            </a>
-            ,
-            <a
-              href="https://nodejs.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gray-800 text-white px-2.5 py-1 rounded-md text-xs sm:text-sm font-medium flex items-center gap-1 hover:bg-gray-700 transition-all"
-            >
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                alt="Node.js"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                alt="Java"
                 className="w-4 h-4"
               />
-              Node.js
+              Java
             </a>
-            ,
+            and
+
             <a
-              href="https://expressjs.com/"
+              href="https://spring.io/projects/spring-boot"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-800 text-white px-2.5 py-1 rounded-md text-xs sm:text-sm font-medium flex items-center gap-1 hover:bg-gray-700 transition-all"
             >
               <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
-                alt="Express.js"
-                className="w-4 h-4 invert"
-              />
-              Express.js
-            </a>
-            , and{" "}
-            <a
-              href="https://www.mongodb.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gray-800 text-white px-2.5 py-1 rounded-md text-xs sm:text-sm font-medium flex items-center gap-1 hover:bg-gray-700 transition-all"
-            >
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
-                alt="MongoDB"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+                alt="Spring Boot"
                 className="w-4 h-4"
               />
-              MongoDB
+              Spring Boot
             </a>
+            {/* <a
+              href="https://www.postgresql.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-800 text-white px-2.5 py-1 rounded-md text-xs sm:text-sm font-medium flex items-center gap-1 hover:bg-gray-700 transition-all"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                alt="PostgreSQL"
+                className="w-4 h-4"
+              />
+              PostgreSQL
+            </a> */}
             . With a focus on{" "}
-            <span className="font-semibold text-white">UI</span> design.
+            <span className="font-semibold text-white">UI</span> and scalable backend design.
           </p>
 
           <h2 className="text-lg sm:text-2xl md:text-3xl font-bold mb-6">
-            Frontend <span className="text-blue-500">Developer</span>
+            Full Stack <span className="text-blue-500">Developer</span>
           </h2>
 
           {/* Buttons */}
