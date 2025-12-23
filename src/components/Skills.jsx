@@ -3,22 +3,20 @@ import {
   FaCss3Alt,
   FaJs,
   FaReact,
-  FaJava,
 } from "react-icons/fa";
+
 import {
   SiTailwindcss,
-  SiSpringboot,
   SiPostgresql,
+  SiTypescript,
+  SiNextdotjs,
+  SiMongodb,
 } from "react-icons/si";
 
 const techStack = [
   {
     name: "HTML",
     icon: <FaHtml5 className="text-orange-500 text-5xl sm:text-6xl" />,
-  },
-  {
-    name: "CSS",
-    icon: <FaCss3Alt className="text-blue-500 text-5xl sm:text-6xl" />,
   },
   {
     name: "Tailwind CSS",
@@ -29,16 +27,20 @@ const techStack = [
     icon: <FaJs className="text-yellow-400 text-5xl sm:text-6xl" />,
   },
   {
-    name: "React.js",
+    name: "TypeScript",
+    icon: <SiTypescript className="text-blue-500 text-5xl sm:text-6xl" />,
+  },
+  {
+    name: "React",
     icon: <FaReact className="text-blue-400 text-5xl sm:text-6xl" />,
   },
   {
-    name: "Java",
-    icon: <FaJava className="text-red-500 text-5xl sm:text-6xl" />,
+    name: "Next.js",
+    icon: <SiNextdotjs className="text-white text-5xl sm:text-6xl" />,
   },
   {
-    name: "Spring Boot",
-    icon: <SiSpringboot className="text-green-500 text-5xl sm:text-6xl" />,
+    name: "MongoDB",
+    icon: <SiMongodb className="text-green-500 text-5xl sm:text-6xl" />,
   },
   {
     name: "PostgreSQL",
@@ -50,7 +52,6 @@ const Skills = () => {
   return (
     <section className="min-h-screen bg-black text-white py-16 sm:py-20 px-6">
       <div className="max-w-6xl mx-auto text-center">
-        {/* Heading */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3">
           Tech <span className="text-blue-500">Stack</span>
         </h2>
@@ -59,7 +60,6 @@ const Skills = () => {
           Technologies I use to build modern and scalable web applications.
         </p>
 
-        {/* Tech Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 sm:gap-8">
           {techStack.map((tech) => (
             <div

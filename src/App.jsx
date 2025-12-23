@@ -4,7 +4,7 @@ import Home from "./components/Home";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
-import Footer2 from "./components/Footer2"; // ✅ Imported here
+import Footer2 from "./components/Footer2"; 
 
 function App() {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -14,7 +14,6 @@ function App() {
   const skillsRef = useRef(null);
   const contactRef = useRef(null);
 
-  // Mobile menu state
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {

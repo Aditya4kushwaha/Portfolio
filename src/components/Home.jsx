@@ -3,7 +3,7 @@ import pf_pic from "../assets/profile.jpg";
 function Home({ scrollToContact }) {
   return (
     <div className="min-h-screen bg-black text-white flex items-center justify-center px-6 sm:px-8 py-12 sm:py-16 relative overflow-hidden">
-      {/* Subtle Gradient Background */}
+      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-transparent opacity-50 pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -14,67 +14,53 @@ function Home({ scrollToContact }) {
           </h1>
 
           {/* Tech Stack Line */}
-          <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 max-w-lg leading-relaxed flex flex-wrap justify-center md:justify-start items-center gap-2">
-            I build interactive web apps using{" "}
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 max-w-xl leading-relaxed flex flex-wrap justify-center md:justify-start items-center gap-2">
+            I build interactive web apps using
 
-            <a
-              href="https://react.dev/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gray-800 text-white px-2.5 py-1 rounded-md text-xs sm:text-sm font-medium flex items-center gap-1 hover:bg-gray-700 transition-all"
-            >
+            {/* TypeScript */}
+            <span className="bg-gray-800 px-3 py-1 rounded-lg text-xs sm:text-sm font-medium flex items-center gap-2">
               <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                alt="React.js"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                alt="TypeScript"
                 className="w-4 h-4"
               />
-              React.js
-            </a>
+              TypeScript
+            </span>
             ,
 
-            <a
-              href="https://www.java.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gray-800 text-white px-2.5 py-1 rounded-md text-xs sm:text-sm font-medium flex items-center gap-1 hover:bg-gray-700 transition-all"
-            >
+            {/* React */}
+            <span className="bg-gray-800 px-3 py-1 rounded-lg text-xs sm:text-sm font-medium flex items-center gap-2">
               <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
-                alt="Java"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                alt="React"
                 className="w-4 h-4"
               />
-              Java
-            </a>
+              React
+            </span>
+            ,
+
+            {/* Next.js */}
+            <span className="bg-gray-800 px-3 py-1 rounded-lg text-xs sm:text-sm font-medium flex items-center gap-2">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                alt="Next.js"
+                className="w-4 h-4 invert"
+              />
+              Next.js
+            </span>
             and
 
-            <a
-              href="https://spring.io/projects/spring-boot"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gray-800 text-white px-2.5 py-1 rounded-md text-xs sm:text-sm font-medium flex items-center gap-1 hover:bg-gray-700 transition-all"
-            >
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
-                alt="Spring Boot"
-                className="w-4 h-4"
-              />
-              Spring Boot
-            </a>
-            {/* <a
-              href="https://www.postgresql.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gray-800 text-white px-2.5 py-1 rounded-md text-xs sm:text-sm font-medium flex items-center gap-1 hover:bg-gray-700 transition-all"
-            >
+            {/* PostgreSQL */}
+            <span className="bg-gray-800 px-3 py-1 rounded-lg text-xs sm:text-sm font-medium flex items-center gap-2">
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
                 alt="PostgreSQL"
                 className="w-4 h-4"
               />
               PostgreSQL
-            </a> */}
+            </span>
             . With a focus on{" "}
-            <span className="font-semibold text-white">UI</span> and scalable backend design.
+            <span className="text-white font-semibold">UI</span> design.
           </p>
 
           <h2 className="text-lg sm:text-2xl md:text-3xl font-bold mb-6">
@@ -84,7 +70,7 @@ function Home({ scrollToContact }) {
           {/* Buttons */}
           <div className="flex flex-wrap justify-center md:justify-start gap-4">
             <a
-              href="https://drive.google.com/file/d/13Glow-PxdALt-oTxAzRJSodJBzUFrCmn/view?usp=sharing"
+              href="https://drive.google.com/file/d/1ltLXu5UMLf-pwqRkeFO32QBbKfe_xHR9/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-blue-600 text-white px-5 py-3 rounded-xl font-semibold transition hover:bg-blue-700 text-sm sm:text-base"
