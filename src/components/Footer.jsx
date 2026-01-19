@@ -21,7 +21,7 @@ const Footer = () => {
             { icon: <FaPinterest />, label: "Pinterest", link: "https://in.pinterest.com/adityakushwahaindia/_profile/" },
             { icon: <FaMedium />, label: "Medium", link: "https://medium.com/@adityakushwahaindia" },
             { icon: <SiPeerlist />, label: "Peerlist", link: "https://peerlist.io/aadi_2005" },
-            { icon: <FaEnvelope />, label: "Email", link: "mailto:adityakushwahaindia@gmail.com" },
+            { icon: <FaEnvelope />, label: "Email", link: "mailto:adityakushwahaksn@gmail.com" },
           ].map(({ icon, label, link }) => (
             <div key={label} className="relative group">
               <a
