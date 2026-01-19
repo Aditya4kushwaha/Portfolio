@@ -120,7 +120,7 @@ function App() {
           <Contact />
         </section>
 
-        {/* ✅ Footer2 Added Below Contact */}
+        {/*  Footer2 Added Below Contact */}
         <Footer2 />
       </main>
     </div>

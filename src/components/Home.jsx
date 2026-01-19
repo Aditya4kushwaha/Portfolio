@@ -70,7 +70,7 @@ function Home({ scrollToContact }) {
           {/* Buttons */}
           <div className="flex flex-wrap justify-center md:justify-start gap-4">
             <a
-              href="https://drive.google.com/file/d/1ltLXu5UMLf-pwqRkeFO32QBbKfe_xHR9/view?usp=sharing"
+              href="https://drive.google.com/file/d/1FXecm4PUM3K95jKcxm8iT5sTGzHGBGkZ/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-blue-600 text-white px-5 py-3 rounded-xl font-semibold transition hover:bg-blue-700 text-sm sm:text-base"

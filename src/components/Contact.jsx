@@ -93,16 +93,6 @@ const Contact = () => {
             >
               <SiLeetcode /> LeetCode
             </a>
-            <a
-              href="https://www.geeksforgeeks.org/user/aadi_kush/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 min-w-[130px] sm:min-w-[160px] px-4 py-2 sm:py-3 rounded-md 
-                         flex items-center justify-center gap-2 border border-gray-600 
-                         hover:bg-gray-800 transition text-sm sm:text-base"
-            >
-              <SiGeeksforgeeks /> GFG
-            </a>
           </div>
         </div>
       </div>
