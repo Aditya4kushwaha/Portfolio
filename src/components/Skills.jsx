@@ -3,20 +3,23 @@ import {
   FaCss3Alt,
   FaJs,
   FaReact,
+  FaNodeJs,
 } from "react-icons/fa";
 
 import {
   SiTailwindcss,
-  SiPostgresql,
-  SiTypescript,
-  SiNextdotjs,
   SiMongodb,
+  SiExpress,
 } from "react-icons/si";
 
 const techStack = [
   {
     name: "HTML",
     icon: <FaHtml5 className="text-orange-500 text-5xl sm:text-6xl" />,
+  },
+  {
+    name: "CSS",
+    icon: <FaCss3Alt className="text-blue-500 text-5xl sm:text-6xl" />,
   },
   {
     name: "Tailwind CSS",
@@ -27,24 +30,20 @@ const techStack = [
     icon: <FaJs className="text-yellow-400 text-5xl sm:text-6xl" />,
   },
   {
-    name: "TypeScript",
-    icon: <SiTypescript className="text-blue-500 text-5xl sm:text-6xl" />,
-  },
-  {
     name: "React",
     icon: <FaReact className="text-blue-400 text-5xl sm:text-6xl" />,
   },
   {
-    name: "Next.js",
-    icon: <SiNextdotjs className="text-white text-5xl sm:text-6xl" />,
+    name: "Node.js",
+    icon: <FaNodeJs className="text-green-500 text-5xl sm:text-6xl" />,
+  },
+  {
+    name: "Express",
+    icon: <SiExpress className="text-gray-300 text-5xl sm:text-6xl" />,
   },
   {
     name: "MongoDB",
     icon: <SiMongodb className="text-green-500 text-5xl sm:text-6xl" />,
-  },
-  {
-    name: "PostgreSQL",
-    icon: <SiPostgresql className="text-blue-400 text-5xl sm:text-6xl" />,
   },
 ];
 

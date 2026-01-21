@@ -15,16 +15,16 @@ function Home({ scrollToContact }) {
 
           {/* Tech Stack Line */}
           <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 max-w-xl leading-relaxed flex flex-wrap justify-center md:justify-start items-center gap-2">
-            I build interactive web apps using
+            I build interactive websites using
 
-            {/* TypeScript */}
+            {/* JavaScript */}
             <span className="bg-gray-800 px-3 py-1 rounded-lg text-xs sm:text-sm font-medium flex items-center gap-2">
               <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-                alt="TypeScript"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                alt="JavaScript"
                 className="w-4 h-4"
               />
-              TypeScript
+              JavaScript
             </span>
             ,
 
@@ -37,34 +37,22 @@ function Home({ scrollToContact }) {
               />
               React
             </span>
-            ,
-
-            {/* Next.js */}
-            <span className="bg-gray-800 px-3 py-1 rounded-lg text-xs sm:text-sm font-medium flex items-center gap-2">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
-                alt="Next.js"
-                className="w-4 h-4 invert"
-              />
-              Next.js
-            </span>
             and
 
-            {/* PostgreSQL */}
+            {/* MongoDB */}
             <span className="bg-gray-800 px-3 py-1 rounded-lg text-xs sm:text-sm font-medium flex items-center gap-2">
               <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
-                alt="PostgreSQL"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                alt="MongoDB"
                 className="w-4 h-4"
               />
-              PostgreSQL
+              MongoDB
             </span>
-            . With a focus on{" "}
-            <span className="text-white font-semibold">UI</span> design.
+            . With focus on <b>UI</b> design.
           </p>
 
           <h2 className="text-lg sm:text-2xl md:text-3xl font-bold mb-6">
-            Full Stack <span className="text-blue-500">Developer</span>
+            MERN Stack <span className="text-blue-500">Developer</span>
           </h2>
 
           {/* Buttons */}
