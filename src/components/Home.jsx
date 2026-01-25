@@ -15,17 +15,8 @@ function Home({ scrollToContact }) {
 
           {/* Tech Stack Line */}
           <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 max-w-xl leading-relaxed flex flex-wrap justify-center md:justify-start items-center gap-2">
-            I build interactive websites using
-            {/* JavaScript */}
-            <span className="bg-gray-800 px-3 py-1 rounded-lg text-xs sm:text-sm font-medium flex items-center gap-2">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                alt="JavaScript"
-                className="w-4 h-4"
-              />
-              JavaScript
-            </span>
-            ,{/* React */}
+            I build modern web applications using
+            {/* React */}
             <span className="bg-gray-800 px-3 py-1 rounded-lg text-xs sm:text-sm font-medium flex items-center gap-2">
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
@@ -43,26 +34,17 @@ function Home({ scrollToContact }) {
               />
               Next.js
             </span>
-            ,{/* Node.js */}
-            <span className="bg-gray-800 px-3 py-1 rounded-lg text-xs sm:text-sm font-medium flex items-center gap-2">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                alt="Node.js"
-                className="w-4 h-4"
-              />
-              Node
-            </span>
             and
-            {/* MongoDB */}
+            {/* PostgreSQL */}
             <span className="bg-gray-800 px-3 py-1 rounded-lg text-xs sm:text-sm font-medium flex items-center gap-2">
               <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
-                alt="MongoDB"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                alt="PostgreSQL"
                 className="w-4 h-4"
               />
-              MongoDB
-            </span>
-            . With focus on <b>UI</b> design.
+              PostgreSQL
+            </span>.
+            With a focus on <b>UI</b> and performance.
           </p>
 
           <h2 className="text-lg sm:text-2xl md:text-3xl font-bold mb-6">
