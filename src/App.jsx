@@ -79,7 +79,7 @@ function App() {
           <div className='flex md:justify-end md:gap-4 gap-2 md:mr-8'>
             <a href='https://x.com/adityakush_04' target="_blank" rel="noopener noreferrer" className='w-6 h-6 hover:scale-120 duration-200 my-2 bg-[var(--border-color)] md:bg-transparent rounded-full flex items-center justify-center'><SiX className='text-[var(--text-main)] w-4 h-4' /></a>
             <a href='mailto:adityakushwahaksn@gmail.com' target="_blank" rel="noopener noreferrer" className='w-6 h-6 hover:scale-120 duration-200 my-2 bg-[var(--border-color)] md:bg-transparent rounded-full flex items-center justify-center'><MdEmail className='text-[var(--text-main)] w-5 h-5' /></a>
-            <a href='https://drive.google.com/file/d/1XJSWyvaLZcTvxaZR2sHrSFp4Ce1Kl1PV/view?usp=sharing' target="_blank" rel="noopener noreferrer" className='w-6 h-6 hover:scale-120 duration-200 my-2 bg-[var(--border-color)] md:bg-transparent rounded-full flex items-center justify-center' title='Resume'><IoDocumentText className='text-[var(--text-main)] w-5 h-5' /></a>
+            <a href='https://drive.google.com/file/d/1sdcXvdwXoI9Uu__w6I9vT-reFFIVfZIU/view?usp=sharing' target="_blank" rel="noopener noreferrer" className='w-6 h-6 hover:scale-120 duration-200 my-2 bg-[var(--border-color)] md:bg-transparent rounded-full flex items-center justify-center' title='Resume'><IoDocumentText className='text-[var(--text-main)] w-5 h-5' /></a>
           </div>
         </div>
         </div>
@@ -174,9 +174,9 @@ function App() {
         <div className='flex flex-wrap justify-center gap-4'>
             <SocialBox name="GitHub" image="github.png" invert={true} link="https://github.com/Aditya4kushwaha" />
             <SocialBox name="LinkedIn" image="linkedin.png" invert={true} link="https://linkedin.com/in/aadi2005" />
-            <SocialBox name="LeetCode" image="leetcode.png" invert={false} link="https://leetcode.com/u/aadi_kush/" />
-            <SocialBox name="CodeForces" image="codeforces.webp" invert={false} link="https://codeforces.com/profile/aadi_kush" />
-            <SocialBox name="CodeChef" image="codechef.webp" invert={true} link="https://www.codechef.com/users/aadi_kush" />
+            <SocialBox name="LeetCode" image="leetcode.png" invert={false} link="https://leetcode.com/u/cpier_69/" />
+            <SocialBox name="CodeForces" image="codeforces.webp" invert={false} link="https://codeforces.com/profile/cpier_69" />
+            <SocialBox name="CodeChef" image="codechef.webp" invert={true} link="https://www.codechef.com/users/cpier_69" />
 
         </div>
       </div>
