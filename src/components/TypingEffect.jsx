@@ -3,7 +3,7 @@ export const TypingEffect = () => {
     const [text, setText] = useState("");
     const [wordIndex,setwordIndex] = useState(0);
     const [phase, setPhase] = useState("typing");
-    let words = ["Competitive Programmer", "X Paglu", "Web Developer", "Tech Enthusiast"];
+    let words = ["Competitive Programmer" , "Web Developer", "Tech Enthusiast"];
     useEffect(() => {
         const currentWord = words[wordIndex];
         let timeout;
@@ -33,6 +33,6 @@ export const TypingEffect = () => {
     }, [text, phase, wordIndex]);
 
   return (
-    <> <div>{text}</div> <span className='cursor animate-pulse [animation-duration:1s]'> | </span></>
+    <> <div>{text}</div> <span className='cursor animate-pulse [animation-duration:1s]'></span></>
   )
 }
