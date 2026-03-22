@@ -79,7 +79,7 @@ function App() {
           <div className='flex md:justify-end md:gap-4 gap-2 md:mr-8'>
             <a href='https://x.com/adityakush_04' target="_blank" rel="noopener noreferrer" className='w-6 h-6 hover:scale-120 duration-200 my-2 bg-[var(--border-color)] md:bg-transparent rounded-full flex items-center justify-center'><SiX className='text-[var(--text-main)] w-4 h-4' /></a>
             <a href='mailto:adityakushwahaksn@gmail.com' target="_blank" rel="noopener noreferrer" className='w-6 h-6 hover:scale-120 duration-200 my-2 bg-[var(--border-color)] md:bg-transparent rounded-full flex items-center justify-center'><MdEmail className='text-[var(--text-main)] w-5 h-5' /></a>
-            <a href='https://drive.google.com/file/d/1sdcXvdwXoI9Uu__w6I9vT-reFFIVfZIU/view?usp=sharing' target="_blank" rel="noopener noreferrer" className='w-6 h-6 hover:scale-120 duration-200 my-2 bg-[var(--border-color)] md:bg-transparent rounded-full flex items-center justify-center' title='Resume'><IoDocumentText className='text-[var(--text-main)] w-5 h-5' /></a>
+            <a href='https://drive.google.com/file/d/1wxm9BDf9eYYz_YN1KWIltlLlOoH-yBDC/view?usp=sharing' target="_blank" rel="noopener noreferrer" className='w-6 h-6 hover:scale-120 duration-200 my-2 bg-[var(--border-color)] md:bg-transparent rounded-full flex items-center justify-center' title='Resume'><IoDocumentText className='text-[var(--text-main)] w-5 h-5' /></a>
           </div>
         </div>
         </div>
