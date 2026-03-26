@@ -23,12 +23,11 @@ import {
 } from "react-icons/si";
 
 export const techStack = [
-  { name: "React", Icon: SiReact, color: "#61DAFB" },
-  { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#06B6D4" },
   { name: "JavaScript", Icon: SiJavascript, color: "#F7DF1E" },
   { name: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
+  { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#06B6D4" },
+  { name: "React", Icon: SiReact, color: "#61DAFB" },
   { name: "Next.js", Icon: SiNextdotjs, colorClass: "text-[var(--text-main)]" },
-    
   { name: "Node.js", Icon: SiNodedotjs, color: "#339933" },
   { name: "Express", Icon: SiExpress, colorClass: "text-[var(--text-main)]" },
   { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
