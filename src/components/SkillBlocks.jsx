@@ -20,7 +20,11 @@ import {
   SiBun,
   SiMarkdown,
   SiSocketdotio,
+  SiFastapi,
+  SiLangchain,
 } from "react-icons/si";
+import { Brain } from "lucide-react";
+
 
 export const techStack = [
   { name: "JavaScript", Icon: SiJavascript, color: "#F7DF1E" },
@@ -36,6 +40,12 @@ export const techStack = [
   { name: "CSS", Icon: SiCss3, color: "#1572B6" },
   { name: "Git", Icon: SiGit, color: "#F05032" },
   { name: "Python", Icon: SiPython, color: "#3776AB" },
+  { name: "FastAPI", Icon: SiFastapi, color: "#009688" },
+  { name: "LangChain", Icon: SiLangchain, color: "#1C3C3A", colorClass: "dark:text-[#38bdf8]" },
+  { name: "RAG", Icon: Brain, color: "#a855f7" },
+  { name: "PostgreSQL", Icon: SiPostgresql, color: "#336791" },
+
+
   {
     name: "Markdown",
     Icon: SiMarkdown,
@@ -58,14 +68,14 @@ export function Box({ prop, size, gap = 2 }) {
   }
   return (
     <div
-      className={`group flex items-center justify-center gap-${gap} border border-[var(--border-color)] hover:border-[var(--subtext-color)] font-gabarito p-1 m-2 rounded-md duration-200 cursor-pointer`}
+      className={`group flex items-center justify-center gap-${gap} border-2 border-[var(--border-color)] bg-[var(--card-bg)] hover:bg-[var(--accent-neon)] font-outfit p-1 m-2 rounded-none brutalist-shadow-sm duration-150 cursor-pointer`}
     >
       <img
         src={`skills/${prop.image}.png`}
         alt={prop.name}
-        className={`${heightClass} w-auto py-1 object-cover duration-200`}
+        className={`${heightClass} w-auto py-1 object-cover`}
       />
-      <div className={`${textsize}`}>{prop.name}</div>
+      <div className={`${textsize} font-bold text-[var(--text-main)]`}>{prop.name}</div>
     </div>
   );
 }
@@ -79,28 +89,33 @@ export const SkillBlocks = () => {
     "MongoDB",
     "Node.js",
     "JavaScript",
-    "Express"
+    "Express",
+    "Python",
+    "FastAPI",
+    "LangChain",
+    "RAG",
+    "PostgreSQL",
   ];
   return (
-    <div className="mt-6 flex flex-wrap justify-center gap-4 w-full max-w-4xl">
+    <div className="mt-6 flex flex-wrap justify-center gap-4 w-full max-w-4xl px-4">
       {techStack
         .filter((t) => activeSkills.includes(t.name))
         .map(({ name, Icon, color, colorClass }) => (
           <div
             key={name}
-            className="flex items-center gap-2 rounded-full border border-dashed border-gray-400 dark:border-neutral-600 bg-[var(--hover-bg)] px-4 py-2 transition-colors hover:border-gray-600 dark:hover:border-neutral-400"
+            className="flex items-center gap-3 rounded-none border-[3px] border-[var(--border-color)] bg-[var(--card-bg)] px-5 py-2.5 transition-all duration-150 brutalist-shadow-sm hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[5px_5px_0px_0px_var(--shadow-color)] hover:bg-[var(--accent-neon)] hover:text-black group/skill cursor-default"
           >
             <span
-              className={`flex items-center justify-center overflow-visible ${colorClass || ""}`}
+              className={`flex items-center justify-center overflow-visible transition-colors duration-150 ${colorClass || ""}`}
               style={color ? { color } : undefined}
             >
               <Icon
-                size={20}
-                className="block"
+                size={22}
+                className="block group-hover/skill:text-black transition-colors duration-150"
                 style={color ? { color } : undefined}
               />
             </span>
-            <span className="text-md font-bold text-[var(--text-main)]">
+            <span className="text-base font-extrabold uppercase tracking-wide text-[var(--text-main)] group-hover/skill:text-black">
               {name}
             </span>
           </div>
@@ -108,3 +123,4 @@ export const SkillBlocks = () => {
     </div>
   );
 };
+

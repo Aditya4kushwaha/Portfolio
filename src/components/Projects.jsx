@@ -52,76 +52,76 @@ const VISIBLE_COUNT = 2;
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="border bg-[var(--card-bg)] border-[var(--card-border)] rounded-xl hover:shadow-lg hover:shadow-amber-300/10 duration-200 group">
-      <img
-        src={`projects/${project.image}.png`}
-        alt={project.name}
-        className="rounded-xl group-hover:scale-105 group-hover:border group-hover:border-neutral-500 duration-200"
-      />
-      <div className="md:p-6 p-2">
-        <h3 className="text-2xl text-[var(--text-color)] font-gabarito font-bold md:mb-2 group-hover:text-[var(--head-color)] duration-200">
-          {project.name}
-        </h3>
-        <div className="flex flex-wrap gap-2 md:mb-4">
-          {project.techStack.map((techName, idx) => {
-            const tech = techStack.find((t) => t.name === techName) || {
-              name: techName,
-            };
-            const Icon = tech.Icon;
-            return (
-              <div
-                key={idx}
-                className="relative group/tooltip p-2 bg-[var(--hover-bg)] rounded-lg border border-transparent hover:border-[var(--border-color)] transition-all duration-200"
-              >
-                {Icon ? (
-                  <Icon
-                    className={`w-5 h-5 ${tech.colorClass || ""}`}
-                    style={{ color: tech.color }}
-                  />
-                ) : (
-                  <span className="text-sm font-bold">{tech.name[0]}</span>
-                )}
-                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs text-[var(--bg-main)] bg-[var(--text-main)] rounded opacity-0 group-hover/tooltip:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-                  {tech.name}
-                </span>
-              </div>
-            );
-          })}
+    <div className="bg-[var(--card-bg)] border-[3px] border-[var(--border-color)] rounded-none brutalist-shadow hover:shadow-[7px_7px_0px_0px_var(--shadow-color)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-150 flex flex-col h-full">
+      <div className="border-b-[3px] border-[var(--border-color)] overflow-hidden bg-neutral-100">
+        <img
+          src={`projects/${project.image}.png`}
+          alt={project.name}
+          className="w-full h-auto object-cover transition-transform duration-300 hover:scale-[1.02]"
+        />
+      </div>
+      <div className="md:p-6 p-4 flex flex-col flex-grow justify-between">
+        <div>
+          <h3 className="text-xl md:text-2xl text-[var(--text-main)] font-outfit font-black uppercase tracking-tight mb-2">
+            {project.name}
+          </h3>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.techStack.map((techName, idx) => {
+              const tech = techStack.find((t) => t.name === techName) || {
+                name: techName,
+              };
+              const Icon = tech.Icon;
+              return (
+                <div
+                  key={idx}
+                  className="relative group/tooltip p-1.5 bg-[var(--hover-bg)] border border-[var(--border-color)] transition-all duration-150 hover:bg-[var(--accent-neon)] rounded-none"
+                >
+                  {Icon ? (
+                    <Icon
+                      className={`w-4 h-4 ${tech.colorClass || ""}`}
+                      style={{ color: tech.color }}
+                    />
+                  ) : (
+                    <span className="text-xs font-black">{tech.name[0]}</span>
+                  )}
+                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-black border border-white uppercase tracking-wider font-extrabold rounded-none opacity-0 group-hover/tooltip:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
+                    {tech.name}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+          <p className="text-[var(--text-color)] mb-6 text-sm font-outfit font-medium leading-relaxed">
+            {project.description}
+          </p>
         </div>
-        <p className="text-[var(--subtext-color)] group-hover:text-[var(--text-color)] mb-4 duration-200 text-sm">
-          {project.description}
-        </p>
         <div className="flex gap-4">
-          <div className="group/button flex justify-center items-center gap-2 border border-[var(--subtext-color)] hover:bg-[var(--hover-bg)] p-1 rounded-md">
+          <a
+            href={project.liveDemoLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group/button flex justify-center items-center gap-2 border-2 border-[var(--border-color)] bg-[var(--card-bg)] hover:bg-[var(--accent-neon)] hover:text-black p-2 px-4 rounded-none brutalist-shadow-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-100 font-outfit font-black uppercase tracking-wider text-xs cursor-pointer text-[var(--text-main)]"
+          >
             <img
               src="icons/internet.png"
-              className="invert-[var(--invert-value)] opacity-80 group-hover/button:opacity-100 h-5 duration-200"
+              className="invert-[var(--invert-value)] opacity-80 group-hover/button:opacity-100 h-4 duration-150"
               alt=""
             />
-            <a
-              href={project.liveDemoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[var(--subtext-color)] group-hover/button:text-[var(--text-color)] text-sm duration-200"
-            >
-              Live Demo
-            </a>
-          </div>
-          <div className="group/button flex justify-center items-center gap-2 border border-[var(--subtext-color)] hover:bg-[var(--hover-bg)] p-1 rounded-md">
+            Live Demo
+          </a>
+          <a
+            href={project.githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group/button flex justify-center items-center gap-2 border-2 border-[var(--border-color)] bg-[var(--card-bg)] hover:bg-[var(--accent-neon)] hover:text-black p-2 px-4 rounded-none brutalist-shadow-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-100 font-outfit font-black uppercase tracking-wider text-xs cursor-pointer text-[var(--text-main)]"
+          >
             <img
               src="icons/github.png"
-              className="invert-[var(--invert-value)] h-5"
+              className="invert-[var(--invert-value)] h-4"
               alt=""
             />
-            <a
-              href={project.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[var(--subtext-color)] group-hover/button:text-[var(--text-color)] text-sm duration-200"
-            >
-              GitHub
-            </a>
-          </div>
+            GitHub
+          </a>
         </div>
       </div>
     </div>
@@ -135,8 +135,8 @@ export const Projects = () => {
   const hasMore = projects.length > VISIBLE_COUNT;
 
   return (
-    <div className="flex flex-col items-center gap-6 md:w-full w-3/4">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+    <div className="flex flex-col items-center gap-8 md:w-full w-full px-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
         {visibleProjects.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
@@ -145,15 +145,15 @@ export const Projects = () => {
       {hasMore && (
         <button
           onClick={() => setShowAll((prev) => !prev)}
-          className="flex items-center gap-2 px-5 py-2 rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] text-[var(--subtext-color)] hover:text-[var(--text-color)] hover:bg-[var(--hover-bg)] transition-all duration-200 text-sm font-medium"
+          className="flex items-center gap-2 px-6 py-3 border-[3px] border-[var(--border-color)] bg-[var(--card-bg)] text-[var(--text-main)] hover:bg-[var(--accent-neon)] hover:text-black hover:-translate-x-0.5 hover:-translate-y-0.5 brutalist-shadow-sm transition-all duration-150 text-sm font-black uppercase tracking-wider cursor-pointer"
         >
           {showAll
             ? "Show Less"
             : `+${projects.length - VISIBLE_COUNT} More Projects`}
           {showAll ? (
-            <ChevronUp className="w-4 h-4" />
+            <ChevronUp className="w-4 h-4 stroke-[3]" />
           ) : (
-            <ChevronDown className="w-4 h-4" />
+            <ChevronDown className="w-4 h-4 stroke-[3]" />
           )}
         </button>
       )}
@@ -162,3 +162,4 @@ export const Projects = () => {
 };
 
 export default Projects;
+

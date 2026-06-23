@@ -7,25 +7,26 @@ import { Marquee } from './components/Marquee'
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import { Analytics } from "@vercel/analytics/react"
 import { TypingEffect } from './components/TypingEffect'
-import { useState } from 'react'
-import { SkillBlocks, Box } from './components/SkillBlocks'
+import { useState, useEffect } from 'react'
+import { SkillBlocks } from './components/SkillBlocks'
 import { Experience } from './components/Experience'
 import { Education } from './components/Education'
-import { SocialBox } from './components/SocialBox'
 import { Footer } from './components/Footer'
 import { Projects } from './components/Projects'
-import { useEffect } from 'react'
+import { SocialBox } from './components/SocialBox'
+
 let experience = [{
-    'position': "Freelance Web Developer",
-    'organization': "Self-employed",
-    'duration': "June 2025 – Present",
+    'position': "Frontend Developer Intern",
+    'organization': "Workafy (Remote)",
+    'duration': "Aug 2025 – Jan 2026",
     'details': [
-        "Achieved 30% growth for a client by designing their best responsive landing page using React.js and Tailwind CSS.",
-        "Focused on creating excellent UI, enhancing user engagement and overall client satisfaction.",
-        "Received positive feedback for timely delivery and high-quality work that boosted the client's business."
+        "Developed responsive UI for a freelancer marketplace with 50K+ active users using ReactJS, Tailwind CSS, and TypeScript.",
+        "Improved platform scalability and user experience through reusable components and frontend optimization.",
+        "Collaborated with backend and design teams on feature delivery and performance improvements."
     ]
-    // no image – optional
 }]
+
+
 let education = [{
     'degree': "Bachelor of Technology (B.Tech) in Computer Science and Engineering",
     'college': "Indian Institute of Information Technology, Bhagalpur",
@@ -36,150 +37,188 @@ let education = [{
   'college': "Smt. Banni Devi Senior Secondary School, Kushinagar",
   'duration': "2020 - 2022"
 }]
+
+const RotatingStamp = () => {
+  // Generate coordinates for a 12-pointed star centered at (50, 50)
+  const starPoints = Array.from({ length: 24 }).map((_, i) => {
+    const angle = (i * 15 * Math.PI) / 180;
+    const r = i % 2 === 0 ? 14 : 8;
+    return `${(50 + r * Math.cos(angle)).toFixed(1)}, ${(50 + r * Math.sin(angle)).toFixed(1)}`;
+  }).join(' ');
+
+  return (
+    <div className='relative w-36 h-36 md:w-44 md:h-44 flex items-center justify-center shrink-0 self-center md:self-auto m-2 select-none'>
+      <svg viewBox="0 0 100 100" className="w-full h-full animate-spin-slow-custom overflow-visible">
+        <path 
+          id="circlePath" 
+          d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" 
+          fill="transparent" 
+        />
+        <text className="font-outfit font-black text-[6.8px] uppercase fill-[var(--text-main)] tracking-wider">
+          <textPath href="#circlePath">
+            AI + FULL STACK • COMPETITIVE PROGRAMMER • WEB DEV •
+          </textPath>
+        </text>
+        <polygon 
+          points={starPoints} 
+          className="fill-[var(--accent-neon)] stroke-[var(--border-color)] stroke-[2.5px] dark:fill-[var(--accent-neon)]" 
+        />
+      </svg>
+    </div>
+  );
+};
+
 function App() {
-  let text = ["Software Developer", "Freelancer", "Web Developer", "Competitive Programmer"];
-  const [skillsState, setSkillsState] = useState("blocks"); // "marquee" or "blocks"
-  
-  
+  const [skillsState, setSkillsState] = useState("blocks");
   const [isDark, setIsDark] = useState(false);
-  useEffect(()=> {
+
+  useEffect(() => {
     if(isDark) {
       document.documentElement.classList.add('dark');
     }
     else {
       document.documentElement.classList.remove('dark');
     }
-    
   }, [isDark]);
+
   return (
-    <div className='flex flex-col justify-center items-center md:p-8 p-2'>
+    <div className='flex flex-col min-h-screen bg-[var(--bg-main)] text-[var(--text-main)] transition-colors duration-200'>
       <Analytics />
       <SpeedInsights />
       
       <NavBar setIsDark={setIsDark} isDark={isDark} />
 
-      {/* <div className='relative bg-white -z-1 w-full h-auto'>
-        <div className='absolute top-0 right-0 h-full w-[30px] md:w-[60px] bg-linear-to-l from-[#121212] to-transparent'></div>
-        <div className='absolute top-0 left-0 h-full w-[30px] md:w-[60px] bg-linear-to-r from-[#121212] to-transparent'></div>
-        <div className='absolute bottom-0 left-0 w-full h-[30px] md:h-[60px] bg-linear-to-t from-[#121212] to-transparent'></div>
-        <div className='absolute top-0 right-0 w-full h-[30px] md:h-[60px] bg-linear-to-b from-[#121212] to-transparent'></div>
-        <img src="icons/Berserk.jpg" alt="Berserk Banner" className='w-full h-auto' />
-      </div> */}
+      <main className='max-w-4xl mx-auto px-4 md:px-8 flex flex-col items-center w-full py-12 md:py-16'>
+        
+        {/* Intro Section */}
+        <section className='w-full flex flex-col items-start mb-16'>
+          {/* Welcome Box */}
+          <div className='inline-block bg-[var(--accent-neon)] border-[3px] border-[var(--border-color)] px-5 py-2 brutalist-shadow-sm font-outfit font-black uppercase text-sm tracking-widest text-black mb-8 hover:bg-[var(--accent-purple)] hover:text-white hover:border-[var(--border-color)] transition-all duration-150 cursor-default select-none'>
+            WELCOME
+          </div>
 
-      <div className='flex flex-col md:ml-4 md:mr-4 mt-10 text-[var(--text-main)] font-gabarito duration-100'>
-        <div className='md:flex items-center'>
-        <img src="/newpf.png" alt="Aditya Kushwaha" className='w-20 md:w-20 h-auto m-2 object-cover rounded-full' />
-        <div className='grid grid-cols-1 md:grid-cols-2 ml-4 space-x-2'>
-          <div className='md:text-5xl text-3xl text-[var(--text-main)] font-bold font-instrument-serif'>
-            <div className='border-b-2 border-dashed border-purple-400 w-fit'>
-              Aditya Kushwaha
+
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-8 items-start w-full'>
+            <div className='md:col-span-2 flex flex-col'>
+              <h1 className='text-4xl md:text-6xl font-outfit font-black uppercase tracking-tight text-[var(--text-main)] mb-3 leading-none'>
+                Aditya Kushwaha
+              </h1>
+              
+              <div className='text-base md:text-lg flex flex-wrap items-center gap-2 mb-6 font-outfit font-bold'>
+                <span className='text-[var(--subtext-color)]'>Kushinagar, UP |</span>
+                <TypingEffect />
+              </div>
+
+<div className='font-outfit text-base md:text-lg text-[var(--text-color)] font-medium leading-relaxed space-y-4'>
+  <p>
+    I am a <span className='bg-[var(--accent-neon)] text-black px-2 py-0.5 font-extrabold uppercase tracking-wide border-2 border-black inline-block rounded-none'>Full Stack + Gen AI Developer</span> focused on building modern web applications and AI-powered experiences.
+  </p>
+
+<p>
+  I build scalable web and AI applications using <span className='border-b-2 border-dashed border-[var(--accent-purple)] font-bold text-[var(--text-main)]'>React, Next.js, Node.js, FastAPI, LangChain, LangGraph, RAG, AI Agents, MCP, and modern LLM APIs</span>.
+</p>
+
+</div>
             </div>
-              <div className='text-[var(--subtext-color)] text-sm md:text-md flex space-x-2'><div>Kushinagar, UP | </div><TypingEffect text={text} /></div>
-          </div>
-          <div className='flex md:justify-end md:gap-4 gap-2 md:mr-8'>
-            <a href='https://x.com/adityakush_04' target="_blank" rel="noopener noreferrer" className='w-6 h-6 hover:scale-120 duration-200 my-2 bg-[var(--border-color)] md:bg-transparent rounded-full flex items-center justify-center'><SiX className='text-[var(--text-main)] w-4 h-4' /></a>
-            <a href='mailto:adityakushwahaksn@gmail.com' target="_blank" rel="noopener noreferrer" className='w-6 h-6 hover:scale-120 duration-200 my-2 bg-[var(--border-color)] md:bg-transparent rounded-full flex items-center justify-center'><MdEmail className='text-[var(--text-main)] w-5 h-5' /></a>
-            <a href='https://drive.google.com/file/d/1cTH8LLxBgRNheieO7vK2u4x1iIJLxoIh/view?usp=sharing' target="_blank" rel="noopener noreferrer" className='w-6 h-6 hover:scale-120 duration-200 my-2 bg-[var(--border-color)] md:bg-transparent rounded-full flex items-center justify-center' title='Resume'><IoDocumentText className='text-[var(--text-main)] w-5 h-5' /></a>
-          </div>
-        </div>
-        </div>
 
-        <div className='flex flex-col justify-center items-center'>
-          <div className='m-4 mt-4 text-md text-[var(--text-color)]'>
-            {/* I build practical software with a focus on <p className='inline bg-amber-300 text-neutral-800 p-1 rounded-md'> efficiency, clarity, and speed.</p>
-            &nbsp; Comfortable across frontend and backend, I care more about systems that work than buzzwords. */}
-            <ul className='list-none gap-2 flex flex-col text-sm sm:text-base text-[var(--text-color)]'>
-              <li>
-                Hi! I am <span className='font-instrument-serif italic text-lg'>Aditya Kushwaha</span>, a <span className='bg-yellow-400 p-1 rounded-md font-bold text-neutral-800 dark:text-black'>web developer</span> && <span className='bg-green-400 p-1 rounded-md font-bold text-neutral-800 dark:text-black'>competitive programmer</span>. I love building <span className='border-b border-purple-300'>efficient and good looking web applications</span> that solve real-world problems.
-              </li>
-              {/* <br /> */}
+            <div className='flex flex-col items-center justify-center gap-6 mt-6 md:mt-0'>
+              <div className='relative group'>
+                <div className='absolute -inset-1.5 bg-[var(--accent-purple)] border-[3px] border-[var(--border-color)] rounded-full'></div>
+                <img 
+                  src="/newpf.png" 
+                  alt="Aditya Kushwaha" 
+                  className='relative w-44 h-44 md:w-52 md:h-52 border-[3px] border-[var(--border-color)] object-cover rounded-full' 
+                />
+              </div>
+              {/* <RotatingStamp /> */}
+            </div>
 
-              {/* <li>I’m an IT student who spends time both on <span className='font-bold font-white border-b border-green-400'> problem-solving fundamentals</span> and on <span className='font-bold font-white border-b border-yellow-400'> building software end-to-end.</span></li> */}
-              {/* <br /> */}
-              <li>
-                I learn stuff by <span className='border-b border-purple-300'>building</span>. I break down <span className='border-b border-purple-300'>problems, solve them one by one, and iterate until it works just as I want it to be.</span>
-              </li>
-              <li>
-                Besides coding, I enjoy <span className='border-b border-purple-300 font-serif italic'>watching cricket and playing cricket</span>.
-              </li>
-            </ul>
           </div>
-<picture>
-  <source media="(min-width: )" srcset="" />
-  <img src="" alt="" />
-</picture>
-        </div>
+        </section>
 
-      </div>
-      <div className='relative flex flex-col justify-center items-center mt-8 w-full md:w-3/4'>
-        <div className='text-[var(--head-color)] font-instrument-serif text-3xl border-b-2 border-dashed border-purple-400'>
-          Technologies & Tools
-        </div>
-        {/* the toggle button (doesnt look good imo, so commented for now) */}
-        {/* <div className='relative grid grid-cols-2 border border-neutral-600 rounded-lg mt-4'>
-          <div className={`absolute left-0 h-full w-1/2 bg-white transition-transform duration-300 ease-in-out ${skillsState==="marquee" ? "translate-x-0 rounded-l-lg rounded-r-0" : "translate-x-full rounded-r-lg rounded-l-0"}`}></div>
-          <div className={`m-2 text-center z-10 cursor-pointer duration-300 ease-in-out ${skillsState==="marquee" ? "text-black" : ""}`} onClick={() => {setSkillsState("marquee")}}>Marquee</div>
-          <div className={`m-2 text-center z-10 cursor-pointer duration-300 ease-in-out ${skillsState==="blocks" ? "text-black" : ""}`} onClick={() => {setSkillsState("blocks")}}>Blocks</div>
-        </div> */}
-        {skillsState === "marquee" && (
-          <Marquee />
-        )}
-        {skillsState === "blocks" && (
+        {/* Technologies & Tools Section */}
+        <section className='w-full mt-16 flex flex-col items-center'>
+          <div className='relative inline-block mb-10'>
+            <div className='absolute -inset-1 bg-[var(--accent-purple)] border-[3px] border-[var(--border-color)]'></div>
+            <h2 className='relative px-6 py-3 bg-[var(--accent-neon)] border-[3px] border-[var(--border-color)] text-black font-outfit font-black text-xl md:text-2xl uppercase tracking-wider'>
+              Technologies & Tools
+            </h2>
+          </div>
+          
           <SkillBlocks />
-        )}
-      </div>
+          <Marquee />
+        </section>
 
-      {/* Experience Section */}
-      <section id='exp' className='relative flex flex-col justify-center items-center pt-20 md:px-8 w-full md:w-3/4'>
-        <div className='text-[var(--head-color)] font-instrument-serif text-3xl mb-2 border-b-2 border-dashed border-purple-400'>
-          Experience
-        </div>
-        <div className='w-full space-y-6'>
+        {/* Experience Section */}
+        <section id='exp' className='w-full mt-24 flex flex-col items-center'>
+          <div className='relative inline-block mb-10'>
+            <div className='absolute -inset-1 bg-[var(--accent-purple)] border-[3px] border-[var(--border-color)]'></div>
+            <h2 className='relative px-6 py-3 bg-[var(--accent-neon)] border-[3px] border-[var(--border-color)] text-black font-outfit font-black text-xl md:text-2xl uppercase tracking-wider'>
+              Experience
+            </h2>
+          </div>
+          
+          <div className='w-full space-y-8 px-4'>
+            {experience.map((exp, index) => (
+              <Experience key={index} prop={exp} />
+            ))}
+          </div>
+        </section>
 
-          {experience.map((exp, index) => (
-            <Experience key={index} prop={exp} />
-          ))}
-
-
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id='projects' className='relative flex flex-col justify-center items-center pt-20'>
-        <div className='text-[var(--head-color)] font-instrument-serif text-3xl mb-8 border-b-2 border-dashed border-purple-400'>
-          Projects
-        </div>
+        {/* Projects Section */}
+        <section id='projects' className='w-full mt-24 flex flex-col items-center'>
+          <div className='relative inline-block mb-10'>
+            <div className='absolute -inset-1 bg-[var(--accent-purple)] border-[3px] border-[var(--border-color)]'></div>
+            <h2 className='relative px-6 py-3 bg-[var(--accent-neon)] border-[3px] border-[var(--border-color)] text-black font-outfit font-black text-xl md:text-2xl uppercase tracking-wider'>
+              Projects
+            </h2>
+          </div>
+          
           <Projects />
-      </section>
+        </section>
 
-      {/* Education Section */}
-      <div className='relative flex flex-col justify-center items-center md:mx-8 w-full md:w-3/4 my-6'>
-        <div className='text-[var(--head-color)] font-instrument-serif text-3xl mb-4 border-b-2 border-dashed border-purple-400'>
-          Education
-        </div>
-        <div className='w-full space-y-6'>
-          {education.map((edu, index) => (
-            <Education key={index} prop={edu}/>
-          ))}
-        </div>
-      </div>
-      {/* Let's Connect Section */}
-      <div id='connect' className='relative flex flex-col justify-center items-center md:mx-8 w-full md:w-3/4'>
-        <div className='text-[var(--head-color)] font-instrument-serif text-3xl mb-2 border-b-2 border-dashed border-purple-400'>
-          Let's Connect
-        </div>
-        <p className='text-[var(--subtext-color)] text-sm mb-6 text-center'>
-          Feel free to reach out for collaborations or just a friendly chat.
-        </p>
-        <div className='flex flex-wrap justify-center gap-4'>
+        {/* Education Section */}
+        <section className='w-full mt-24 flex flex-col items-center'>
+          <div className='relative inline-block mb-10'>
+            <div className='absolute -inset-1 bg-[var(--accent-purple)] border-[3px] border-[var(--border-color)]'></div>
+            <h2 className='relative px-6 py-3 bg-[var(--accent-neon)] border-[3px] border-[var(--border-color)] text-black font-outfit font-black text-xl md:text-2xl uppercase tracking-wider'>
+              Education
+            </h2>
+          </div>
+          
+          <div className='w-full space-y-6 px-4'>
+            {education.map((edu, index) => (
+              <Education key={index} prop={edu}/>
+            ))}
+          </div>
+        </section>
+
+        {/* Let's Connect Section */}
+        <section id='connect' className='w-full mt-24 flex flex-col items-center'>
+          <div className='relative inline-block mb-4'>
+            <div className='absolute -inset-1 bg-[var(--accent-purple)] border-[3px] border-[var(--border-color)]'></div>
+            <h2 className='relative px-6 py-3 bg-[var(--accent-neon)] border-[3px] border-[var(--border-color)] text-black font-outfit font-black text-xl md:text-2xl uppercase tracking-wider'>
+              Let's Connect
+            </h2>
+          </div>
+          
+          <p className='text-[var(--text-color)] text-sm md:text-base font-outfit font-medium mb-8 text-center max-w-md px-4'>
+            Feel free to reach out for collaborations, full-time opportunities, or just a friendly developer chat.
+          </p>
+          
+          <div className='flex flex-wrap justify-center gap-6 px-4'>
             <SocialBox name="GitHub" image="github.png" invert={true} link="https://github.com/Aditya4kushwaha" />
             <SocialBox name="LinkedIn" image="linkedin.png" invert={true} link="https://linkedin.com/in/aadi2005" />
+            <SocialBox name="Twitter" Icon={SiX} link="https://x.com/adityakush_04" />
+            <SocialBox name="Email" Icon={MdEmail} link="mailto:adityakushwahaksn@gmail.com" />
             <SocialBox name="LeetCode" image="leetcode.png" invert={false} link="https://leetcode.com/u/cpier_69/" />
             <SocialBox name="CodeForces" image="codeforces.webp" invert={false} link="https://codeforces.com/profile/aadi_kush" />
             <SocialBox name="CodeChef" image="codechef.webp" invert={true} link="https://www.codechef.com/users/aadi_kush" />
+          </div>
 
-        </div>
-      </div>
+        </section>
+
+      </main>
 
       <Footer/>
     </div>
@@ -187,3 +226,4 @@ function App() {
 }
 
 export default App
+

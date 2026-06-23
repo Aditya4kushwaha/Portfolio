@@ -3,42 +3,42 @@ import './Marquee.css'
 import { techStack } from './SkillBlocks'
 
 const marqueeSkills = [
-  "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Express", "MongoDB", "PostgreSQL", "TailwindCSS"
+  "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Python", "FastAPI", "LangChain", "RAG", "PostgreSQL"
 ];
+
+
 
 function Box({techName}) {
   const tech = techStack.find(t => t.name === techName) || { name: techName };
   const Icon = tech.Icon;
   
   return (
-    <div className='flex justify-center items-center flex-col p-4 gap-2 h-20 w-20 md:h-30 md:w-30 text-center group/box'>
+    <div className='flex justify-center items-center gap-2 px-5 py-2.5 border-[3px] border-[var(--border-color)] bg-[var(--card-bg)] brutalist-shadow-sm m-2 text-center group/box hover:bg-[var(--accent-neon)] hover:-translate-y-0.5 transition-all duration-150 shrink-0 cursor-default'>
         {Icon ? (
-             <Icon className='h-8 md:h-10 w-auto grayscale group-hover/box:grayscale-30 duration-200 group-hover/box:scale-120 object-cover' style={{ color: tech.color }} />
-        ) : (
-            <div className='h-8 md:h-10 w-auto flex items-center justify-center text-xs'>No Icon</div>
-        )}
-        <div className='text-[var(--text-color)] text-sm group-hover/box:text-[var(--head-color)] group-hover/box:scale-110 duration-200'>{tech.name}</div>
+             <Icon className='h-5 w-5 group-hover/box:scale-110 transition-transform duration-150' style={{ color: tech.color }} />
+        ) : null}
+        <div className='text-[var(--text-main)] font-black text-sm uppercase tracking-wide'>{tech.name}</div>
     </div>
   )
 }
 export const Marquee = () => {
     return (
-        <div className='group/marquee relative flex flex-row w-full overflow-hidden justify-center items-center'>
-        <div className='absolute top-0 left-0 h-full w-[100px] bg-linear-to-r from-[var(--bg-main)] to-transparent z-10'></div>
-        <div className='absolute top-0 right-0 h-full w-[100px] bg-linear-to-l from-[var(--bg-main)] to-transparent z-10'></div>
-            <div className='flex justify-center animate-marquee flex-row group-hover/marquee:[animation-play-state:paused]'>
+        <div className='group/marquee relative flex flex-row w-full overflow-hidden justify-start items-center py-4'>
+        <div className='absolute top-0 left-0 h-full w-[80px] bg-gradient-to-r from-[var(--bg-main)] to-transparent z-10 pointer-events-none'></div>
+        <div className='absolute top-0 right-0 h-full w-[80px] bg-gradient-to-l from-[var(--bg-main)] to-transparent z-10 pointer-events-none'></div>
+            <div className='flex justify-start animate-marquee flex-row group-hover/marquee:[animation-play-state:paused] shrink-0'>
                 {marqueeSkills.map((name, index) => (
                     <Box key={index} techName={name} />
                 ))}
             </div>
 
-            <div className='flex justify-center animate-marquee flex-row group-hover/marquee:[animation-play-state:paused]'>
+            <div className='flex justify-start animate-marquee flex-row group-hover/marquee:[animation-play-state:paused] shrink-0'>
                 {marqueeSkills.map((name, index) => (
                     <Box key={index} techName={name} />
                 ))}
             </div>
             
-            <div className='flex justify-center animate-marquee flex-row group-hover/marquee:[animation-play-state:paused]'>
+            <div className='flex justify-start animate-marquee flex-row group-hover/marquee:[animation-play-state:paused] shrink-0'>
                 {marqueeSkills.map((name, index) => (
                     <Box key={index} techName={name} />
                 ))}
@@ -46,3 +46,4 @@ export const Marquee = () => {
         </div>
     )
 }
+

@@ -1,48 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
 @import "tailwindcss";
 
 :root {
-  /* Light Mode Defaults */
-  --bg-main: #ffffff;
+  /* Light Mode - Neo-Brutalist (high contrast, warm off-white, neon elements) */
+  --bg-main: #f4f4f0;
   --text-main: #000000;
-  --head-color: #171717; /* neutral-900 */
-  --text-color: #404040; /* neutral-700 */
-  --subtext-color: #525252; /* neutral-600 */
-  --border-color: #e5e5e5; /* neutral-200 */
+  --head-color: #000000;
+  --text-color: #1a1a1a;
+  --subtext-color: #4b5563;
+  --border-color: #000000;
   --card-bg: #ffffff;
-  --card-border: #e5e5e5; /* neutral-200 */
-  --hover-bg: #f5f5f5; /* neutral-100 */
-  --footer-bg: #f5f5f5; /* neutral-100 */
+  --card-border: #000000;
+  --hover-bg: #e5e7eb;
+  --footer-bg: #eaeae5;
   --invert-value: 0;
+  
+  --accent-neon: #d4ff3b;
+  --accent-purple: #9d4edd;
+  --accent-purple-hover: #7b2cbf;
+  --shadow-color: #000000;
 }
 
 .dark {
-  /* Dark Mode Overrides */
-  --bg-main: #171717; /* neutral-900 */
+  /* Dark Mode - Neo-Brutalist (high contrast, dark grey, white borders, neon elements) */
+  --bg-main: #121212;
   --text-main: #ffffff;
-  --head-color: #e5e5e5; /* neutral-200 */
-  --text-color: #d4d4d4; /* neutral-300 */
-  --subtext-color: #a3a3a3; /* neutral-400 */
-  --border-color: #525252; /* neutral-600 */
-  --card-bg: #171717; /* neutral-900 */
-  --card-border: #171717; /* neutral-900 */
-  --hover-bg: #262626; /* neutral-800 */
-  --footer-bg: #0a0a0a; /* neutral-950 */
+  --head-color: #ffffff;
+  --text-color: #e4e4e7;
+  --subtext-color: #a1a1aa;
+  --border-color: #ffffff;
+  --card-bg: #1e1e1e;
+  --card-border: #ffffff;
+  --hover-bg: #27272a;
+  --footer-bg: #18181b;
   --invert-value: 1;
+
+  --accent-neon: #d4ff3b;
+  --accent-purple: #c084fc;
+  --accent-purple-hover: #a855f7;
+  --shadow-color: #ffffff;
 }
 
 @theme {
     --font-instrument-serif: 'Instrument Serif', serif;
     --font-gabarito: 'Gabarito', sans-serif;
+    --font-outfit: 'Outfit', sans-serif;
     --font-imperial-script: 'Imperial Script', cursive;
     --animate-blob: blob 3s linear infinite;
+    --animate-spin-slow: spin 20s linear infinite;
 }
+
 @variant dark (&:where(.dark, .dark *));
+
 @keyframes blob {
-    0% {
-    /* transform: rotate(0deg); */
-    /* Complex radius values create the organic shape */
+  0% {
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   }
   25% {
@@ -55,7 +67,61 @@
      border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
   }
   100% {
-    /* transform: rotate(360deg); */
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   }
 }
+
+/* Neo-Brutalist Custom Utilities */
+.brutalist-border {
+  border: 3px solid var(--border-color);
+}
+
+.brutalist-shadow {
+  box-shadow: 5px 5px 0px 0px var(--shadow-color);
+}
+
+.brutalist-shadow-sm {
+  box-shadow: 3px 3px 0px 0px var(--shadow-color);
+}
+
+.brutalist-shadow-lg {
+  box-shadow: 8px 8px 0px 0px var(--shadow-color);
+}
+
+.brutalist-card {
+  border: 3px solid var(--border-color);
+  box-shadow: 5px 5px 0px 0px var(--shadow-color);
+  background-color: var(--card-bg);
+  transition: all 0.15s ease-in-out;
+}
+
+.brutalist-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px 0px var(--shadow-color);
+}
+
+.brutalist-btn {
+  border: 3px solid var(--border-color);
+  box-shadow: 3px 3px 0px 0px var(--shadow-color);
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+
+.brutalist-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px 0px 0px var(--shadow-color);
+}
+
+/* Custom rotate utility for SVG badge */
+@keyframes rotate-clockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow-custom {
+  animation: rotate-clockwise 25s linear infinite;
+}

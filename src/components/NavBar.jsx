@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Sun, Moon } from 'lucide-react'
 
-export const NavBar = ({setIsDark, isDark}) => {
+export const NavBar = ({ setIsDark, isDark }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -10,75 +10,99 @@ export const NavBar = ({setIsDark, isDark}) => {
 
   return (
     <>
-      <div className='sticky top-4 left-0 flex backdrop-blur-sm bg-[var(--bg-main)]/30 justify-between items-center p-4 w-full rounded-full border border-[var(--border-color)] text-[var(--subtext-color)] font-gabarito z-50'>
-        <div className='ml-2 font-gabarito text-[var(--text-main)] text-2xl font-bold'>
-          Aditya.
-        </div>
-        
-        {/* Desktop Navigation */}
-        <div className='flex items-center gap-6'>
-
+      <div className='sticky top-0 left-0 w-full bg-[var(--card-bg)] border-b-[3px] border-[var(--border-color)] text-[var(--text-main)] font-outfit z-50 transition-colors duration-200'>
+        <div className='max-w-4xl mx-auto flex justify-between items-center py-4 px-4 md:px-8'>
+          <a href="#" className='font-outfit text-3xl font-black tracking-tighter hover:text-[var(--accent-purple)] duration-150'>
+            ADITYA !
+          </a>
           
-        <div className='hidden md:flex gap-4 text-lg mr-4'>
-          <a href='#exp' className='hover:text-[var(--text-main)] cursor-pointer'>work</a>
-          <a href='#projects' className='hover:text-[var(--text-main)] cursor-pointer'>projects</a>
+          {/* Desktop Navigation */}
+          <div className='flex items-center gap-6'>
+            <div className='hidden md:flex gap-6 text-sm font-extrabold uppercase tracking-wider'>
+              <a href='#exp' className='hover:text-[var(--accent-purple)] transition-colors duration-150 relative py-1 after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[var(--accent-purple)] hover:after:w-full after:transition-all after:duration-200'>
+                Work
+              </a>
+              <a href='#projects' className='hover:text-[var(--accent-purple)] transition-colors duration-150 relative py-1 after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[var(--accent-purple)] hover:after:w-full after:transition-all after:duration-200'>
+                Projects
+              </a>
+              <a href='#connect' className='hover:text-[var(--accent-purple)] transition-colors duration-150 relative py-1 after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[var(--accent-purple)] hover:after:w-full after:transition-all after:duration-200'>
+                Connect
+              </a>
+              <a href='https://drive.google.com/file/d/1f9LpELVggZraAeybiZuNkT0DnW-N0fF9/view?usp=sharing' target="_blank" rel="noopener noreferrer" className='hover:text-[var(--accent-purple)] transition-colors duration-150 relative py-1 after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[var(--accent-purple)] hover:after:w-full after:transition-all after:duration-200'>
+                Resume
+              </a>
+            </div>
+
+            {/* Theme Toggle Button - styled brutalist */}
+            <button
+              onClick={() => setIsDark(!isDark)}
+              className="w-10 h-10 flex items-center justify-center border-2 border-[var(--border-color)] bg-[var(--card-bg)] hover:bg-[var(--accent-neon)] hover:text-black transition-all duration-150 cursor-pointer text-[var(--text-main)] brutalist-shadow-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+              aria-label="Toggle theme"
+            >
+              {isDark ? <Sun size={18} className="stroke-[2.5]" /> : <Moon size={18} className="stroke-[2.5]" />}
+            </button>
+
+            {/* Hamburger Menu Button */}
+            <button 
+              className='md:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center z-20 border-2 border-[var(--border-color)] p-1 bg-[var(--card-bg)] brutalist-shadow-sm hover:bg-[var(--accent-neon)] transition-all cursor-pointer'
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
+            >
+              <span 
+                className={`block w-5 h-0.5 bg-[var(--text-main)] transition-all duration-300 ${
+                  isMenuOpen ? 'rotate-45 translate-y-2' : ''
+                }`}
+              ></span>
+              <span 
+                className={`block w-5 h-0.5 bg-[var(--text-main)] transition-all duration-300 ${
+                  isMenuOpen ? 'opacity-0' : ''
+                }`}
+              ></span>
+              <span 
+                className={`block w-5 h-0.5 bg-[var(--text-main)] transition-all duration-300 ${
+                  isMenuOpen ? '-rotate-45 -translate-y-1' : ''
+                }`}
+              ></span>
+            </button>
+          </div>
         </div>
-
-        {/* Hamburger Menu Button */}
-        <button 
-          className='md:hidden flex flex-col gap-1 w-6 h-6 justify-center items-center z-20'
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
-          <span 
-            className={`block w-6 h-0.5 bg-[var(--subtext-color)] transition-all duration-300 ${
-              isMenuOpen ? 'rotate-45 translate-y-1.5' : ''
-            }`}
-          ></span>
-          <span 
-            className={`block w-6 h-0.5 bg-[var(--subtext-color)] transition-all duration-300 ${
-              isMenuOpen ? 'opacity-0' : ''
-            }`}
-          ></span>
-          <span 
-            className={`block w-6 h-0.5 bg-[var(--subtext-color)] transition-all duration-300 ${
-              isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
-            }`}
-          ></span>
-        </button>
-      
-      <button
-          onClick={() => setIsDark(!isDark)}
-          className="cursor-pointer hover:bg-neutral-200 rounded-full p-1 hover:text-neutral-800 transition-colors duration-200"
-          aria-label="Toggle theme"
-          >
-          {isDark ? <Sun size={24} /> : <Moon size={24} />}
-        </button>
-      </div>
-
       </div>
 
       {/* Mobile Menu */}
       <div 
-        className={`md:hidden fixed top-20 right-4 backdrop-blur-sm bg-[var(--bg-main)]/90 border border-[var(--border-color)] rounded-2xl overflow-hidden transition-all duration-300 z-10 ${
-          isMenuOpen ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'
+        className={`md:hidden fixed top-18 left-0 w-full bg-[var(--card-bg)] border-b-4 border-[var(--border-color)] transition-all duration-300 z-40 overflow-hidden ${
+          isMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
         }`}
       >
-        <div className='flex flex-col p-6 gap-4 text-lg text-[var(--subtext-color)] font-gabarito'>
+        <div className='flex flex-col p-6 gap-4 text-md uppercase font-black tracking-wider text-[var(--text-main)]'>
           <a href='#exp'
-            className='hover:text-[var(--text-color)] cursor-pointer' 
+            className='hover:text-[var(--accent-purple)] cursor-pointer py-1' 
             onClick={toggleMenu}
           >
-            work
+            Work
           </a>
           <a href='#projects' 
-            className='hover:text-[var(--text-color)] cursor-pointer' 
+            className='hover:text-[var(--accent-purple)] cursor-pointer py-1' 
             onClick={toggleMenu}
           >
-            projects
+            Projects
+          </a>
+          <a href='#connect' 
+            className='hover:text-[var(--accent-purple)] cursor-pointer py-1' 
+            onClick={toggleMenu}
+          >
+            Connect
+          </a>
+          <a href='https://drive.google.com/file/d/1f9LpELVggZraAeybiZuNkT0DnW-N0fF9/view?usp=sharing' target="_blank" rel="noopener noreferrer"
+            className='hover:text-[var(--accent-purple)] cursor-pointer py-1' 
+            onClick={toggleMenu}
+          >
+            Resume
           </a>
         </div>
       </div>
+
     </>
   )
 }
+

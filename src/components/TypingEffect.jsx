@@ -1,9 +1,11 @@
-import { useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
+
 export const TypingEffect = () => {
     const [text, setText] = useState("");
-    const [wordIndex,setwordIndex] = useState(0);
+    const [wordIndex, setwordIndex] = useState(0);
     const [phase, setPhase] = useState("typing");
-    let words = ["Competitive Programmer" , "Web Developer", "Tech Enthusiast"];
+    let words = ["AI + Full Stack Developer", "Competitive Programmer", "Web Developer"];
+    
     useEffect(() => {
         const currentWord = words[wordIndex];
         let timeout;
@@ -14,11 +16,11 @@ export const TypingEffect = () => {
                 if(nextText === currentWord){
                     setPhase("pausing");
                 }
-            },60);
+            }, 60);
         } else if(phase === "pausing"){
             timeout = setTimeout(() => {
                 setPhase("deleting");
-            }, 1000);
+            }, 1200);
         }else if(phase === "deleting"){
             timeout = setTimeout(() => {
                 const nextText = currentWord.slice(0, text.length - 1);
@@ -33,6 +35,10 @@ export const TypingEffect = () => {
     }, [text, phase, wordIndex]);
 
   return (
-    <> <div>{text}</div> <span className='cursor animate-pulse [animation-duration:1s]'></span></>
+    <>
+      <span className='font-outfit font-black text-[var(--accent-purple)] uppercase tracking-wider'>{text}</span>
+      <span className='inline-block w-1.5 h-4 ml-1 bg-[var(--accent-purple)] animate-pulse'></span>
+    </>
   )
 }
+
